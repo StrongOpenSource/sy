@@ -1,0 +1,40 @@
+
+
+   .wrapper {position: relative;}
+   #input {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
+
+.down_btn {
+display: inline-block;
+    background: #151d33;
+    border-radius: 5px;
+    border: 1px solid #c48822;
+    margin: 0px 6px 4px 0px;
+    padding: 0px 5px;
+    font-weight: bold;
+}
+
+.torrent_content{
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    padding: 30px 20px;
+    line-height: 40px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.img_item {
+    float: left;
+}
+@media (max-width: 500px) {
+    .img_item{
+        width: 48%;
+    }
+}
+@media (min-width: 501px) {
+    .img_item{
+        width: 24%;
+    }
+}
+.img_item{
+    padding: 2px;
+}

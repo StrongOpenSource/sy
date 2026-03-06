@@ -1,0 +1,41 @@
+* {box-sizing:border-box;font-size:16px;
+    font-family: Helvetica, Tahoma, Arial, "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+} 
+html,body {padding:0;margin:0;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;}
+.btn {cursor:pointer;border:0;padding:10px 30px;}
+.jzhh {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.jzhhh {white-space:nowrap;text-overflow:ellipsis;}
+.column {text-align: justify;text-align-last: justify;}
+.blkg {white-space:pre-wrap}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance: none !important;margin:0;}
+input[type="number"]{-moz-appearance:textfield;}
+input:focus,textarea:focus {outline:none;}
+button {cursor:pointer;}
+
+a,a:link {text-decoration:none;color:rgb(177, 177, 177);color:rgb(69, 108, 240)}
+a:hover {color:red}
+
+.top_ad {width:100%;display:inline-block;margin-bottom:5px;text-align:center;}
+.top_ad a.me {width:100%;max-width:1000px;display:inline-block;background-repeat:no-repeat;background-size: 100% 100%;}
+
+.top_ad_phone {width:100%;display:none;}
+.top_ad_phone a.me {width:100%;float:left;background-repeat:no-repeat;background-size: 100% 100%;}
+.top_ad_phone a.z {display:none;}
+
+.jsads {display:none;}
+
+/* 底部友链 */
+.new_foot_links {width:100%;display:inline-block;margin-bottom:20px;}
+.new_foot_links h2 {color:red;font-size:12px;margin:0 0 5px 0;}
+.new_foot_links a {font-size:12px;border:1px solid rgb(160, 160, 31);height:27px;line-height:27px;padding:0 5px;margin:2px 2px 2px 2px;display:inline-block;}
+.new_foot_links a:hover {background:rgb(160, 160, 31);color:white;}
+
+@media screen and (max-width: 1400px){
+
+}
+@media screen and (max-width: 600px){
+    .jsads {display:block;}
+    .new_foot_links {text-align:center;}
+}

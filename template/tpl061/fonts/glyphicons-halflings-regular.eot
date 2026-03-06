@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>404</title>
+  
+  
+</div>
+<div class="main container">
+  <h2 class="title">404  not fount</h2>
+  <ul class="mainlist clearfix">
+     <p style="font-size:48px;text-align:center;margin-top:100px;margin-bottom:50px;">页面未找到 </p>
+     
+    <p style="font-size:28px;text-align:center;margin-top:10px;margin-bottom:100px;"><strong id="second_show">5</strong>秒钟之后将进入自动跳入首页。</p>
+
+<script type="text/javascript">
+    var timeout = 5;
+    function showError() {
+        document.getElementById("second_show").innerHTML = timeout;
+        timeout--;
+        if (timeout == 0) {
+            window.location.href = "/";
+        } else {
+            setTimeout("showError()", 1000);
+        }
+    }
+
+    showError();
+</script>
+
+
+
+
+      </ul>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+
+a:link {text-decoration:none;color:rgb(233, 233, 233);}
+a:hover {text-decoration:none;color:yellow;}
+
+.body {max-width:1000px;margin:0 auto;}
+.content {}
+.top {width:100%;display:inline-block;margin-top:20px;}
+.logo {width:100%;display:inline-block;color:white;margin-top:0px;}
+.logo img {width:50px;}
+.logo span {position: relative;top:-12px;font-size:22px;font-weight:bold;}
+.logo a:hover {color:white;}
+.nav {width:100%;display:inline-block;margin-bottom:1px;margin-top:10px;}
+.nav a {float:left;width:10%;color:white;padding:0;height:36px;line-height:36px;text-align:center;margin:3px 0;border:2px solid #10241a;background:#218352;font-size:14px;font-weight:600;border-radius:5px;}
+.nav a:hover,.nav a.this {color:rgb(255, 230, 0);border:2px solid rgb(255, 230, 0);background:#54791a;}
+
+.video_list {}
+.video_list h2 {color:rgb(228, 224, 17);}
+.video_list h2 svg {position:relative;top:7px;}
+.video_list h2 svg path {fill:rgb(255, 255, 255);}
+.video_list div.ll {width:100%;display:inline-block;}
+.video_list div.lr {width:100%;display:inline-block;}
+.video_list div.lr p {width:100%;display:inline-block;margin:0;color:rgb(232, 247, 25);}
+.video_list div.lr p a {display:inline-block;font-size:14px;}
+.video_list div.lr p a:hover {background:#54791a;}
+
+/* 搜索 */
+.search {width:100%;display:inline-block;padding:0 0;margin-bottom:15px;margin-top:10px;color:red;text-align:center;font-size:14px;}
+.search input {width:80%;background:#ffeaea;border:2px solid rgb(253, 150, 15);color:rgb(255, 0, 0);padding:0 8px;float:left;border-right:0;border-radius:5px 0 0 5px;}
+/* .search input:focus {background:#d3d3d3;} */
+.search input,.search button {margin-bottom:0px;height:45px;line-height:45px;}
+.search button {width:20%;border:2px solid rgb(253, 150, 15);background:rgb(253, 150, 15);color:white;padding:0 10px;float:left;border-left:0;border-radius:0 5px 5px 0;}
+.search button:hover {background:rgb(248, 64, 64);color:white;}
+.search form {display:inline-block;width:100%;}
+.search a.tag {display:inline-block;margin:1px 2px;font-size:14px;color:rgb(209, 206, 206);}
+.search a.tag:hover {color:yellow;}
+
+/* 友连 */
+.links {width:100%;float:left;text-align:left;}
+.links a {width:12.5%;font-size:14px;float:left;margin:0 0 2px 0;border:2px solid #10241a;background:#2e4239;color:white;height:32px;line-height:32px;text-align:center;font-weight:bold;border-radius:2px;}
+.links a:hover {background:rgb(247, 162, 51);color:black;}
+.links-vip {margin-top:7px;}
+.links-o {margin-bottom:10px;}
+.links-vip a {background:rgb(230, 211, 109);color:red;}
+.footlinks h2 {color:rgb(211, 205, 124);}
+
+.colliu div.data {transition: all 0.2s linear;}
+.colliu div.data:hover{transform: scale(1);transition: all 0.2s linear;}
+
+/* 图片瀑布流 */
+.colliu {
+            display: flex; /* 使用 Flexbox 布局 */
+            flex-wrap: wrap; /* 允许换行 */
+            gap: 10px; /* 列之间的间距 */
+            padding: 10px; /* 内边距 */
+}
+.colliu div.data {margin-bottom: 10px; width: 24%; break-inside:avoid;position:relative;z-index:99;border-radius:3px;}
+.colliu div.data:hover {background:#177546;}
+.colliu div.img img {width:100%;border-radius:3px;}
+.colliu div p {margin:0;font-size:14px;}
+.colliu div p.title {
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: #ddd;
+}
+.colliu div p.category {position:absolute;top:0;right:0;}
+.colliu div p.category a {color:rgb(240, 240, 240);background:rgb(238, 92, 24);font-size:14px;z-index:99999999;padding:2px 5px;}
+.colliu div p.category a:hover {color:rgb(240, 240, 240);background:rgb(238, 92, 24);}
+
+.plus_list {width:100%;display:inline-block;}
+.plus_list a {width:25%;border:0px solid rgb(0, 0, 0);padding:5px 3px;float:left;position:relative;}
+.plus_list a p {width:100%;margin:0;float:left;}
+.plus_list a p.img {
+    height:180px;
+    background-repeat: no-repeat;
+    background-size: 110% 100%;
+    border-radius:5px 5px 0 0;
+}
+.plus_list a p.new_img {background-size: 100% 120%;}
+.plus_list a p.title {background:rgba(66, 66, 66, 0.4);border-radius:0 0 5px 5px;color:rgb(223, 223, 223);padding:0px 5px;height:30px;line-height:30px;font-size:14px;font-weight:bold;}
+.plus_list a p.category {width:auto;position:absolute;background:rgba(1,1,1,0.4);color:rgb(243, 229, 30);bottom:35px;font-size:14px;padding:0px 5px;height:25px;line-height:25px;}
+.plus_list a:hover p.title {background:#e64040;}
+
+/* page */
+.pages {text-align:center;margin:20px 0 30px 0;display:inline-block;width:100%}
+.pages .pagination em {margin:0 1px;}
+.pages .pagination em.current {font-style:normal;background-color: rgb(255, 231, 13);border:0px solid rgb(39, 106, 207);color:rgb(0, 0, 0);font-weight: bold;padding:0 13px;height:30px;line-height:30px;display: inline-block;border-radius:5px;}
+.pages .pagination a {padding:0 13px;height:30px;line-height:30px;background:#0f4e2c;color:rgb(255, 255, 255);display: inline-block;border:0px solid rgb(56, 56, 56);border-radius:5px;}
+.pages .pagination a,.pages .pagination a.next_page {margin: 5px 3px;}
+.pages .pagination a:hover,.pages button:hover {background-color: rgb(255, 231, 13);color:rgb(0, 0, 0);}
+.pages .pagination .disabled {display:none}
+.pages .pagination .gap {color:rgb(133, 129, 129)}
+
+.pages form {margin-top:10px;}
+.pages input {width:80px;font-size:14px;background:#ffffff;text-align:center;padding:5px 3px;border:0px solid rgb(109, 108, 108);color:black;border-radius:5px;}
+.pages button {background:rgb(190, 190, 190);border:0px solid rgb(190, 190, 190);padding:3px 10px;font-size:14px;border-radius:5px;color:black;position: relative;top:2px;}
+
+.foot {width:100%;display:inline-block;font-size:13px;text-align:center;margin:20px 0;width:100%;}
+.foot p {margin:5px 0;color:#969b98;font-size:13px;}
+
+.player {}
+.player div.video {border:1px solid black;}
+
+
+/* apps */
+.av-apps {width:100%;display:inline-block;}
+.av-apps a {width:10%;float:left;height:90px;text-align:center;}
+.av-apps a img {width:50px;}
+.av-apps a span {width:100px;font-size:12px;height:25px;line-height:25px;font-weight:bold;}
+
+
+@media screen and (max-width: 600px){
+    .top {margin-top:10px;}
+    .logo {width:100%;float:left;}
+    .nav {width:100%;float:left;margin-top:10px;}
+    .nav a {width:20%;}
+    .video_list div.ll {width:100%;float:left;}
+    .video_list div.lr {width:100%;float:left;}
+    .search {text-align:center;}
+    .search form {width:100%;margin-bottom:2px;}
+
+.colliu div.data {margin-bottom: 10px; width: 48%; break-inside:avoid;position:relative;z-index:99;border-radius:3px;
+
+
+}
+
+.colliu div.img img {height: 28vw;}
+
+
+    .links a {width:20%;font-size:12px;}
+    .av-apps a {width:20%;}
+    .plus_list a {width:50%;}
+    .plus_list a p.img {height:150px;}
+    .plus_list a.new_a {width:50%;}
+}

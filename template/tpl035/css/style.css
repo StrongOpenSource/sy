@@ -1,0 +1,52 @@
+.wrapper2 {position: relative;}
+#m_input {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
+
+.img_item {
+    float: left;
+}
+@media (max-width: 500px) {
+    .img_item{
+        width: 48%;
+    }
+}
+@media (min-width: 501px) {
+    .img_item{
+        width: 24%;
+    }
+}
+.img_item{
+    padding: 2px;
+}
+
+
+.download {
+    display: flex;
+    justify-content: center;
+    color: white;
+
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.downbtn a  {
+    background: ;
+    color: white;
+    width: 100%;
+}
+
+.downbtn {
+    display: inline-block;
+    background: #633030;
+    color: white;
+    margin: 0px 10px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border:0px solid;
+    border-radius:5px;
+}
+
+
+
+
+

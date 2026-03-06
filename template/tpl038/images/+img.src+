@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>500</title>
+
+
+
+
+
+
+<base href="" />
+<link href="https://st.dizhi.men/static/css/base.css" rel="stylesheet" />
+<link href="https://st.dizhi.men/static/plugins/layui/css/layui.css" rel="stylesheet" media="all"/>
+<style type="text/css">
+	a { color:green}
+	a:link { text-decoration: none; }
+	a:visited { text-decoration: none; }
+	a:hover { text-decoration: none; color:blue;}
+	a:active { text-decoration: none; }
+</style>
+</head>
+<body style="color: #444; margin:0;font: normal 14px/20px Arial, Helvetica, sans-serif; height:100%; background-color: #fff;">
+	<div style="height:auto; min-height:100%; ">
+		<div style="text-align: center; width:800px; margin-left: -400px; position:absolute; top: 30%; left:50%;">
+			<h3 style="margin-top:20px;font-size: 10px;color:red;">系统发生了故障</h3>
+			<br/>
+			<h3 style="margin-top:20px;font-size: 10px;color:red;">但是我们需要等待汤姆回到月球才能检查......</h3>
+			<br/>
+			<p style="margin-top: 20px; font-size: 10px; width: 100%; text-align: center;"><span><a href="/">返回首页</a></span></p>
+		</div>
+	</div>
+</body>
+</html>

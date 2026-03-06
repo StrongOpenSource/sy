@@ -1,0 +1,17 @@
+#topad {
+	width: 1200px;
+}
+#topad img{
+        padding-bottom: 5px;
+width: 960px;
+height: 80px;
+    }
+@media(max-width:980px) {
+#topad {
+        width: 95%;
+    }
+#topad img{
+        width: 100%;
+height: auto;
+    }
+}
