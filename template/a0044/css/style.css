@@ -1,0 +1,874 @@
+/* Media Portal - QQ Music Style: Fresh Green + Dark Nav + Clean White */
+
+:root {
+    /* ── 主色：QQ音乐绿 ── */
+    --qqm-green: #31c27c;
+    --qqm-green-dark: #22a865;
+    --qqm-green-deeper: #178050;
+    --qqm-green-light: #edfaf3;
+    --qqm-green-mid: #96debb;
+
+    /* ── 顶部导航：深黑色 ── */
+    --qqm-nav: #222222;
+    --qqm-nav-text: #d0d0d0;
+    --qqm-nav-active-bg: var(--qqm-green);
+    --qqm-nav-active-text: #ffffff;
+
+    /* ── 文字 ── */
+    --text-dark: #111111;
+    --text-body: #333333;
+    --text-second: #666666;
+    --text-muted: #999999;
+    --text-dim: #cccccc;
+
+    /* ── 背景 ── */
+    --bg-page: #f2f2f2;
+    --bg-white: #ffffff;
+    --bg-card: #ffffff;
+    --bg-strip: #f8f8f8;
+
+    /* ── 边框/阴影 ── */
+    --border: #e5e5e5;
+    --border-soft: #efefef;
+    --shadow-xs: 0 1px 4px rgba(0,0,0,0.06);
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.11);
+    --shadow-card: 0 2px 12px rgba(49,194,124,0.10);
+
+    /* ── 圆角：QQ音乐偏圆润 ── */
+    --rd: 8px;
+    --rd-sm: 5px;
+    --rd-lg: 12px;
+    --rd-xl: 20px;
+
+    --ease: all 0.2s ease;
+    --green-glow: 0 3px 12px rgba(49,194,124,0.30);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+    background: var(--bg-page);
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ════════════════════════════════════
+   TOPBAR — 深黑色顶部 + Logo + 品牌（非固定）
+   QQ音乐：黑色横条，绿色活跃按钮
+════════════════════════════════════ */
+.qqm-topbar {
+    background: var(--qqm-nav);
+    border-bottom: none;
+    padding: 0;
+}
+
+.qqm-topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    gap: 16px;
+}
+
+/* 品牌：彩色圆形图标 + 名称 + 域名 同行 */
+.qqm-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.qqm-logo-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* QQ音乐风格：渐变绿圆形Logo */
+.qqm-logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ffe04b 0%, #31c27c 55%, #22a865 100%);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(49,194,124,0.4);
+}
+
+.qqm-logo-icon::after {
+    content: '♪';
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.qqm-sitename {
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    line-height: 1.1;
+}
+
+.qqm-domain-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(49,194,124,0.15);
+    border: 1px solid rgba(49,194,124,0.4);
+    border-radius: var(--rd-xl);
+    padding: 4px 14px;
+}
+
+.qqm-domain-lbl {
+    font-size: 11px;
+    color: var(--qqm-green);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.qqm-domain-val {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+}
+
+/* ════════════════════════════════════
+   PAGE WRAPPER
+════════════════════════════════════ */
+.qqmwrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 14px;
+}
+
+.qqmpad { padding: 10px 0; }
+
+/* ════════════════════════════════════
+   CATEGORY NAV BLOCK
+   QQ音乐风格：深色标签，绿色高亮，圆润卡片
+════════════════════════════════════ */
+.qqm-catblock {
+    background: var(--bg-white);
+    border-radius: var(--rd);
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+}
+
+.qqm-catrow {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.qqm-catrow:last-child { border-bottom: none; }
+
+.qqm-zone-lbl {
+    font-weight: 800;
+    font-size: 13px;
+    color: #ffffff;
+    white-space: nowrap;
+    width: 9%;
+    min-width: 58px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 4px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, var(--qqm-green) 0%, var(--qqm-green-dark) 100%);
+    letter-spacing: 0.3px;
+    border-right: 2px solid var(--qqm-green-deeper);
+}
+
+.qqm-zone-links {
+    width: 91%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 8px 10px;
+    align-items: center;
+    background: var(--bg-strip);
+}
+
+.qqm-zone-links a {
+    display: inline-block;
+    color: var(--text-body);
+    text-decoration: none;
+    padding: 5px 4px;
+    border-radius: var(--rd-sm);
+    transition: var(--ease);
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    white-space: nowrap;
+    text-align: center;
+    font-size: 13px;
+    width: calc((100% - 35px) / 8);
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.qqm-zone-links a:hover {
+    background: var(--qqm-green);
+    color: #ffffff;
+    border-color: var(--qqm-green);
+    box-shadow: var(--green-glow);
+}
+
+.qqm-zone-links a.active {
+    background: var(--qqm-green);
+    color: #ffffff;
+    border-color: var(--qqm-green-dark);
+    font-weight: 700;
+    box-shadow: var(--green-glow);
+}
+
+/* ════════════════════════════════════
+   SEARCH BAR
+════════════════════════════════════ */
+.qqm-searchbar {
+    background: var(--bg-white);
+    border-radius: var(--rd);
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+}
+
+.qqm-searchbar form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.qqm-searchbar input[type="text"] {
+    flex: 1;
+    min-width: 120px;
+    padding: 9px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--rd-xl);
+    background: var(--bg-strip);
+    color: var(--text-dark);
+    font-size: 14px;
+    transition: var(--ease);
+    outline: none;
+    font-family: inherit;
+}
+
+.qqm-searchbar input[type="text"]:focus {
+    border-color: var(--qqm-green);
+    background: var(--bg-white);
+    box-shadow: 0 0 0 3px rgba(49,194,124,0.12);
+}
+
+.qqm-searchbar input[type="text"]::placeholder { color: var(--text-dim); }
+
+.qqm-searchbar button {
+    padding: 9px 18px;
+    border: none;
+    border-radius: var(--rd-xl);
+    background: var(--qqm-green);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--ease);
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: inherit;
+}
+
+.qqm-searchbar button:hover {
+    background: var(--qqm-green-dark);
+    box-shadow: var(--green-glow);
+}
+
+/* ════════════════════════════════════
+   HOT TAGS — 圆角胶囊标签
+════════════════════════════════════ */
+.qqm-taglist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    list-style: none;
+    padding: 10px 12px;
+    background: var(--bg-white);
+    border-radius: var(--rd);
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+}
+
+.qqm-tag {
+    padding: 4px 13px;
+    background: var(--bg-strip);
+    border-radius: var(--rd-xl);
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+    transition: var(--ease);
+    border: 1px solid var(--border);
+}
+
+.qqm-tag:hover {
+    background: var(--qqm-green-light);
+    color: var(--qqm-green-dark);
+    border-color: var(--qqm-green-mid);
+}
+
+/* ════════════════════════════════════
+   SECTION HEADING
+   QQ音乐风格：居中大标题 + 字间距
+════════════════════════════════════ */
+.qqm-section { margin-bottom: 20px; }
+
+.qqm-sec-head {
+    margin-bottom: 14px;
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+.qqm-sec-head::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background: var(--qqm-green);
+    border-radius: 2px;
+}
+
+.qqm-sec-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-dark);
+    letter-spacing: 3px;   /* QQ音乐大标题字间距特色 */
+    display: inline;
+}
+
+.qqm-sec-title a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--ease);
+}
+
+.qqm-sec-title a:hover { color: var(--qqm-green); }
+
+/* ════════════════════════════════════
+   FILM CARD GRID — QQ音乐封面圆角卡片
+════════════════════════════════════ */
+.qqm-filmgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+}
+
+.qqm-filmgrid li {
+    background: var(--bg-card);
+    border-radius: var(--rd);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+    transition: var(--ease);
+}
+
+.qqm-filmgrid li:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-3px);
+    border-color: var(--qqm-green-mid);
+}
+
+.qqm-filmcover {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 600 / 350;
+    background: var(--bg-strip);
+    /* 封面图片圆角（仅顶部） */
+    border-radius: var(--rd) var(--rd) 0 0;
+}
+
+.qqm-filmcover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.38s ease;
+    display: block;
+}
+
+.qqm-filmcover:hover img { transform: scale(1.06); }
+
+/* 播放按钮遮罩 */
+.qqm-filmcover::after {
+    content: '▶';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    color: #ffffff;
+    background: rgba(49,194,124,0.48);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+    border-radius: var(--rd) var(--rd) 0 0;
+}
+
+.qqm-filmcover:hover::after { opacity: 1; }
+
+.qqm-filminfo { padding: 8px 10px 10px; }
+
+.qqm-filminfo h5 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.qqm-filminfo h5 a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--ease);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.qqm-filminfo h5 a:hover { color: var(--qqm-green); }
+
+/* 播放量小字 */
+.qqm-filminfo .qqm-playcnt {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    display: block;
+}
+
+/* ════════════════════════════════════
+   VIDEO PLAYER
+════════════════════════════════════ */
+.MacPlayer {
+    background: #000;
+    border-radius: var(--rd);
+    overflow: hidden;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow-md);
+}
+
+.video-container {
+    width: 100%;
+    height: 600px;
+    max-height: 600px;
+    margin-bottom: 14px;
+    background: #000;
+    border-radius: var(--rd);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.video-container iframe,
+.video-container video,
+.video-container #video-container {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ════════════════════════════════════
+   DETAIL TITLE
+════════════════════════════════════ */
+.qqm-detail-head {
+    line-height: 1.8;
+    text-align: center;
+    padding: 13px 18px;
+    font-size: 16px;
+    margin: 10px 0;
+    word-break: break-all;
+    background: var(--bg-white);
+    border-radius: var(--rd);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--qqm-green);
+    box-shadow: var(--shadow-xs);
+}
+
+.qqm-detail-head a {
+    color: var(--qqm-green);
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+/* ════════════════════════════════════
+   INFO PANEL
+════════════════════════════════════ */
+.qqm-infobox {
+    font-size: 14px;
+    line-height: 2;
+    padding: 18px 22px;
+    background: var(--bg-white);
+    border-radius: var(--rd);
+    margin: 12px 0;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+    border-top: 3px solid var(--qqm-green);
+}
+
+/* ════════════════════════════════════
+   TORRENT CAPTURE
+════════════════════════════════════ */
+.qqm-preview img,
+.qqm-preview .img_item img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--rd-sm);
+    border: 1px solid var(--border);
+    display: block;
+}
+
+.qqm-preview .img_item { width: 100%; }
+
+/* ════════════════════════════════════
+   DOWNLOAD BUTTONS — 绿色圆角
+════════════════════════════════════ */
+.qqm-dlzone {
+    text-align: center;
+    padding: 16px;
+    background: var(--bg-white);
+    border-radius: var(--rd);
+    margin: 12px 0;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+.qqm-dlbtn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--qqm-green);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: var(--rd-xl);
+    font-weight: 700;
+    font-size: 14px;
+    transition: var(--ease);
+    border: 2px solid transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.qqm-dlbtn:hover {
+    background: var(--qqm-green-dark);
+    box-shadow: var(--green-glow);
+}
+
+/* ════════════════════════════════════
+   SHARE SECTION
+════════════════════════════════════ */
+.share-section {
+    background: var(--bg-white);
+    border-radius: var(--rd);
+    padding: 12px 14px;
+    margin: 12px 0;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.share-url-display {
+    background: var(--bg-strip);
+    border: 1px solid var(--border);
+    border-radius: var(--rd-xl);
+    padding: 7px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.share-label {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--qqm-green);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.share-url {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'Courier New', monospace;
+    word-break: break-all;
+    flex: 1;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.share-copy-btn {
+    padding: 8px 18px;
+    background: var(--qqm-green);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--rd-xl);
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--ease);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: inherit;
+}
+
+.share-copy-btn:hover {
+    background: var(--qqm-green-dark);
+    box-shadow: var(--green-glow);
+}
+
+.share-icon { font-size: 14px; }
+
+/* ════════════════════════════════════
+   PAGINATION — 圆角胶囊页码
+════════════════════════════════════ */
+.page_info_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.a_page_info,
+.page_info_focus {
+    display: inline-block;
+    padding: 6px 13px;
+    border-radius: var(--rd-xl);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: var(--ease);
+    min-width: 36px;
+    text-align: center;
+}
+
+.a_page_info {
+    background: var(--bg-white);
+    color: var(--text-body);
+    border: 1px solid var(--border);
+}
+
+.a_page_info:hover {
+    background: var(--qqm-green);
+    border-color: var(--qqm-green);
+    color: #ffffff;
+}
+
+.page_info_focus {
+    background: var(--qqm-green);
+    color: #ffffff;
+    border: 1px solid var(--qqm-green-dark);
+    cursor: default;
+}
+
+/* ════════════════════════════════════
+   FOOTER
+════════════════════════════════════ */
+.qqm-footer {
+    padding: 22px 0;
+    text-align: center;
+    background: var(--bg-white);
+    border-top: 2px solid var(--qqm-green);
+    margin-top: 24px;
+}
+
+.qqm-footer p {
+    margin: 5px 0;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.qqm-footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--ease);
+}
+
+.qqm-footer a:hover { color: var(--qqm-green); }
+
+/* ════════════════════════════════════
+   FRIEND LINKS
+════════════════════════════════════ */
+.qqm-flinks {
+    padding: 12px 14px;
+    background: var(--bg-white);
+    border-radius: var(--rd);
+    border: 1px solid var(--border);
+}
+
+.qqm-flinks dl { margin: 0; }
+.qqm-flinks dd { display: inline-block; margin: 3px 5px; }
+
+.qqm-flinks a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--ease);
+    font-size: 13px;
+}
+
+.qqm-flinks a:hover { color: var(--qqm-green); }
+
+/* ════════════════════════════════════
+   UTILITIES
+════════════════════════════════════ */
+.clearfix::after { content: ""; display: table; clear: both; }
+
+.hide-mobile { display: block; }
+.hide-pc { display: block; }
+
+@media (max-width: 768px)  { .hide-mobile { display: none !important; } }
+@media (min-width: 769px)  { .hide-pc     { display: none !important; } }
+
+img[data-original] { background: var(--bg-strip); }
+
+/* ════════════════════════════════════
+   RESPONSIVE ≤ 768px
+════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    .qqmwrap { padding: 0 8px; }
+
+    .qqm-topbar-inner { height: auto; padding: 10px 0; flex-wrap: wrap; gap: 8px; }
+    .qqm-logo-icon    { width: 34px; height: 34px; }
+    .qqm-logo-icon::after { font-size: 17px; }
+    .qqm-sitename     { font-size: 17px; }
+    .qqm-domain-row   { padding: 3px 11px; gap: 6px; }
+    .qqm-domain-lbl   { font-size: 10px; }
+    .qqm-domain-val   { font-size: 12px; }
+
+    .qqmpad { padding: 6px 0; }
+
+    /* Mobile nav */
+    .qqm-catrow { display: flex; align-items: stretch; }
+
+    .qqm-zone-lbl {
+        width: 13%;
+        min-width: 34px;
+        font-size: 10px;
+        padding: 4px 2px;
+        letter-spacing: 0;
+        border-right-width: 1px;
+    }
+
+    .qqm-zone-links {
+        width: 87%;
+        gap: 4px;
+        padding: 5px 6px;
+    }
+
+    .qqm-zone-links a {
+        font-size: 14px;
+        padding: 6px 2px;
+        width: calc((100% - 12px) / 4);
+    }
+
+    /* 2-column grid */
+    .qqm-filmgrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+    .qqm-filminfo       { padding: 6px 8px 8px; }
+    .qqm-filminfo h5    { font-size: 12px; }
+    .qqm-sec-title      { font-size: 16px; letter-spacing: 2px; }
+
+    .video-container    { height: 56.25vw; max-height: 380px; }
+
+    .qqm-taglist  { padding: 8px 10px; gap: 6px; }
+    .qqm-tag      { padding: 3px 10px; font-size: 12px; }
+
+    .qqm-searchbar      { padding: 8px 10px; }
+    .qqm-searchbar form { gap: 6px; }
+    .qqm-searchbar input[type="text"] { min-width: 80px; padding: 8px 12px; font-size: 13px; }
+    .qqm-searchbar button             { padding: 8px 13px; font-size: 12px; }
+
+    .qqm-dlzone { padding: 12px 8px; gap: 8px; }
+    .qqm-dlbtn  { padding: 9px 14px; font-size: 12px; }
+
+    .share-section     { padding: 9px 10px; gap: 8px; }
+    .share-url-display { padding: 6px 11px; gap: 6px; }
+    .share-label       { font-size: 11px; }
+    .share-url         { font-size: 11px; }
+    .share-copy-btn    { padding: 7px 12px; font-size: 12px; }
+
+    .qqm-section  { margin-bottom: 14px; }
+    .qqm-sec-head { margin-bottom: 10px; }
+    .qqm-infobox  { padding: 13px 15px; font-size: 13px; }
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE ≤ 480px
+════════════════════════════════════ */
+@media (max-width: 480px) {
+
+    .qqm-sitename { font-size: 15px; }
+
+    .qqm-zone-lbl {
+        width: 13%;
+        min-width: 30px;
+        font-size: 9px;
+        padding: 3px 1px;
+    }
+
+    .qqm-zone-links {
+        width: 87%;
+        gap: 3px;
+        padding: 4px 4px;
+    }
+
+    .qqm-zone-links a {
+        font-size: 13px;
+        padding: 5px 1px;
+        width: calc((100% - 9px) / 4);
+    }
+
+    .qqm-filmgrid   { gap: 8px; }
+    .qqm-dlbtn      { padding: 8px 10px; font-size: 11px; }
+    .qqm-dlzone     { padding: 10px 4px; gap: 5px; }
+    .share-section  { padding: 7px; gap: 5px; }
+    .share-copy-btn { padding: 7px 10px; font-size: 11px; }
+    .video-container { height: 56.25vw; max-height: 280px; }
+}

@@ -1,0 +1,971 @@
+/* ========================================
+   Yicai Portal Theme — Warm Orange & Teal
+   ======================================== */
+
+:root {
+    --og:  #e8521a;
+    --og2: #d4400e;
+    --og-lt: rgba(232, 82, 26, 0.10);
+    --tl:  #0097c8;
+    --tl2: #007aa3;
+    --tl-lt: rgba(0, 151, 200, 0.10);
+    --wh:  #ffffff;
+    --bg:  #f0f1f3;
+    --bg2: #f7f8f9;
+    --pnl: #ffffff;
+    --bdr: #e2e4e8;
+    --bdr2: #d0d3d8;
+    --tx:  #1a1a1a;
+    --tx2: #4a4a4a;
+    --tx3: #919191;
+    --shd: rgba(0,0,0,0.07);
+    --shd2: rgba(0,0,0,0.14);
+    --rr:  4px;
+    --rr2: 3px;
+    --ani: all 0.2s ease;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+                 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+    background: var(--bg);
+    color: var(--tx);
+    line-height: 1.55;
+    font-size: 14px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================
+   TOP HEADER — WHITE BAR, NOT STICKY
+   ======================================== */
+.ycf-hd {
+    background: var(--wh);
+    border-bottom: 3px solid var(--og);
+    box-shadow: 0 2px 8px var(--shd);
+}
+
+.ycf-hd-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 0;
+}
+
+.ycf-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ycf-logo {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    transition: var(--ani);
+}
+
+.ycf-logo:hover { opacity: 0.85; }
+
+.ycf-sname {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--og);
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.ycf-sname::after {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: var(--tl);
+    border-radius: 50%;
+    margin-left: 6px;
+    flex-shrink: 0;
+    position: relative;
+    top: -8px;
+}
+
+.ycf-latest {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--og-lt) 0%, var(--tl-lt) 100%);
+    border: 1px solid var(--og);
+    border-radius: 20px;
+    padding: 5px 14px;
+}
+
+.ycf-latest-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--og);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+}
+
+.ycf-latest-url {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--tl);
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+/* ========================================
+   LAYOUT
+   ======================================== */
+.ycf-wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 14px;
+}
+
+.ycf-gap { padding: 12px 0; }
+
+/* ========================================
+   CATEGORY NAV
+   ======================================== */
+.ycf-nav {
+    background: var(--pnl);
+    border: 1px solid var(--bdr);
+    border-radius: var(--rr);
+    overflow: hidden;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 5px var(--shd);
+}
+
+.ycf-nav-row {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--bdr);
+}
+
+.ycf-nav-row:last-child { border-bottom: none; }
+
+.ycf-nav-tag {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--wh);
+    white-space: nowrap;
+    width: auto;
+    min-width: 0;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 8px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--og) 0%, var(--og2) 100%);
+}
+
+.ycf-nav-links {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    padding: 7px 8px;
+    align-items: center;
+}
+
+.ycf-nav-links a {
+    display: inline-block;
+    color: var(--tx2);
+    text-decoration: none;
+    padding: 5px 3px;
+    border-radius: var(--rr2);
+    transition: var(--ani);
+    background: var(--bg2);
+    border: 1px solid var(--bdr);
+    white-space: nowrap;
+    text-align: center;
+    font-size: 13px;
+    width: calc((100% - 35px) / 8);
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.ycf-nav-links a:hover {
+    background: var(--og);
+    color: var(--wh);
+    border-color: var(--og);
+}
+
+.ycf-nav-links a.active {
+    background: var(--og);
+    color: var(--wh);
+    border-color: var(--og);
+    font-weight: 600;
+}
+
+/* ========================================
+   SEARCH
+   ======================================== */
+.ycf-sch {
+    background: var(--pnl);
+    border: 1px solid var(--bdr);
+    border-radius: var(--rr);
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 5px var(--shd);
+}
+
+.ycf-sch form {
+    display: flex;
+    gap: 7px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.ycf-sch input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    padding: 9px 14px;
+    border: 1px solid var(--bdr2);
+    border-radius: var(--rr2);
+    background: var(--bg2);
+    color: var(--tx);
+    font-size: 14px;
+    transition: var(--ani);
+    outline: none;
+}
+
+.ycf-sch input[type="text"]:focus {
+    border-color: var(--og);
+    background: var(--wh);
+    box-shadow: 0 0 0 3px var(--og-lt);
+}
+
+.ycf-sch input[type="text"]::placeholder { color: var(--tx3); }
+
+.ycf-sch button {
+    padding: 9px 16px;
+    border: none;
+    border-radius: var(--rr2);
+    background: linear-gradient(135deg, var(--og) 0%, var(--og2) 100%);
+    color: var(--wh);
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--ani);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.ycf-sch button:hover {
+    background: linear-gradient(135deg, var(--og2) 0%, #b83500 100%);
+    box-shadow: 0 3px 8px rgba(232,82,26,0.3);
+}
+
+/* ========================================
+   TAG CLOUD
+   ======================================== */
+.ycf-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    list-style: none;
+    padding: 12px;
+    background: var(--pnl);
+    border-radius: var(--rr);
+    border: 1px solid var(--bdr);
+    margin-bottom: 12px;
+    box-shadow: 0 1px 5px var(--shd);
+}
+
+.ycf-kw {
+    padding: 4px 12px;
+    background: var(--bg2);
+    border-radius: 2px;
+    color: var(--tx2);
+    text-decoration: none;
+    font-size: 12px;
+    transition: var(--ani);
+    border: 1px solid var(--bdr);
+}
+
+.ycf-kw:hover {
+    background: var(--og);
+    color: var(--wh);
+    border-color: var(--og);
+}
+
+/* ========================================
+   SECTION BLOCK
+   ======================================== */
+.ycf-sec {
+    margin-bottom: 20px;
+}
+
+.ycf-sec-hd {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--bdr);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ycf-sec-hd::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 54px;
+    height: 2px;
+    background: var(--og);
+}
+
+.ycf-sec-ttl {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--tx);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ycf-sec-ttl::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: linear-gradient(to bottom, var(--og) 0%, var(--tl) 100%);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.ycf-sec-ttl a {
+    color: var(--tx);
+    text-decoration: none;
+    transition: var(--ani);
+}
+
+.ycf-sec-ttl a:hover { color: var(--og); }
+
+/* ========================================
+   FILM CARD GRID
+   ======================================== */
+.ycf-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+}
+
+.ycf-grid li {
+    position: relative;
+    opacity: 0;
+    animation: ycfFadeUp 0.4s ease forwards;
+    background: var(--pnl);
+    border-radius: var(--rr);
+    overflow: hidden;
+    border: 1px solid var(--bdr);
+    box-shadow: 0 1px 5px var(--shd);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.ycf-grid li:hover {
+    box-shadow: 0 5px 14px var(--shd2);
+    border-color: var(--og);
+    transform: translateY(-2px);
+}
+
+.ycf-grid li:nth-child(1) { animation-delay: 0.03s; }
+.ycf-grid li:nth-child(2) { animation-delay: 0.07s; }
+.ycf-grid li:nth-child(3) { animation-delay: 0.11s; }
+.ycf-grid li:nth-child(4) { animation-delay: 0.15s; }
+.ycf-grid li:nth-child(5) { animation-delay: 0.19s; }
+.ycf-grid li:nth-child(6) { animation-delay: 0.23s; }
+.ycf-grid li:nth-child(7) { animation-delay: 0.27s; }
+.ycf-grid li:nth-child(8) { animation-delay: 0.31s; }
+
+@keyframes ycfFadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.ycf-thumb {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 12 / 7;
+    background: var(--bg2);
+}
+
+.ycf-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.38s ease;
+    display: block;
+}
+
+.ycf-thumb:hover img { transform: scale(1.07); }
+
+.ycf-thumb::after {
+    content: '▶';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: rgba(255,255,255,0.95);
+    background: rgba(232, 82, 26, 0.35);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+    z-index: 1;
+}
+
+.ycf-thumb:hover::after { opacity: 1; }
+
+.ycf-card-body {
+    padding: 8px 9px 10px;
+    border-top: 1px solid var(--bdr);
+}
+
+.ycf-card-body h5 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.ycf-card-body h5 a {
+    color: var(--tx);
+    text-decoration: none;
+    transition: var(--ani);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ycf-card-body h5 a:hover { color: var(--og); }
+
+/* ========================================
+   VIDEO PLAYER
+   ======================================== */
+.ycf-player {
+    width: 100%;
+    height: 620px;
+    max-height: 620px;
+    margin-bottom: 16px;
+    background: #000;
+    border-radius: var(--rr);
+    overflow: hidden;
+    box-shadow: 0 4px 16px var(--shd2);
+    position: relative;
+    border: 1px solid var(--bdr);
+}
+
+.ycf-player iframe,
+.ycf-player video,
+.ycf-player #video-container {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.MacPlayer {
+    background: #000;
+    border-radius: var(--rr);
+    overflow: hidden;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 16px var(--shd2);
+    border: 1px solid var(--bdr);
+}
+
+/* ========================================
+   TORRENT PREVIEW IMAGE
+   ======================================== */
+.ycf-preview {
+    width: 100%;
+}
+
+.ycf-preview img,
+.ycf-preview .img_item img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--rr2);
+    border: 1px solid var(--bdr);
+    display: block;
+}
+
+.ycf-preview .img_item { width: 100%; }
+
+/* ========================================
+   ACTION BUTTONS
+   ======================================== */
+.ycf-actions {
+    text-align: center;
+    padding: 14px;
+    background: var(--pnl);
+    border-radius: var(--rr);
+    margin: 14px 0;
+    border: 1px solid var(--bdr);
+    box-shadow: 0 1px 5px var(--shd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.ycf-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, var(--og) 0%, var(--og2) 100%);
+    color: var(--wh);
+    text-decoration: none;
+    border-radius: var(--rr2);
+    font-weight: 700;
+    font-size: 14px;
+    transition: var(--ani);
+    border: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.ycf-btn:hover {
+    background: linear-gradient(135deg, var(--og2) 0%, #b83500 100%);
+    box-shadow: 0 4px 12px rgba(232,82,26,0.35);
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   SHARE / LINK PANEL
+   ======================================== */
+.ycf-share {
+    background: var(--pnl);
+    border-radius: var(--rr);
+    padding: 13px;
+    margin: 13px 0;
+    border: 1px solid var(--bdr);
+    box-shadow: 0 1px 5px var(--shd);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ycf-url-area {
+    background: var(--bg2);
+    border: 1px solid var(--bdr2);
+    border-radius: var(--rr2);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.ycf-url-label {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--og);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.ycf-url-val {
+    font-size: 12px;
+    color: var(--tx3);
+    word-break: break-all;
+    flex: 1;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ycf-copy-btn {
+    padding: 9px 18px;
+    background: linear-gradient(135deg, var(--og) 0%, var(--og2) 100%);
+    color: var(--wh);
+    border: none;
+    border-radius: var(--rr2);
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--ani);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.ycf-copy-btn:hover {
+    background: linear-gradient(135deg, var(--og2) 0%, #b83500 100%);
+    box-shadow: 0 3px 10px rgba(232,82,26,0.3);
+}
+
+.ycf-ico { font-size: 15px; }
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.ycf-pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.a_page_info,
+.page_info_focus {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: var(--rr2);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: var(--ani);
+    min-width: 36px;
+    text-align: center;
+}
+
+.a_page_info {
+    background: var(--pnl);
+    color: var(--tx);
+    border: 1px solid var(--bdr2);
+}
+
+.a_page_info:hover {
+    background: var(--og);
+    border-color: var(--og);
+    color: var(--wh);
+}
+
+.page_info_focus {
+    background: var(--og);
+    color: var(--wh);
+    border: 1px solid var(--og);
+    cursor: default;
+}
+
+/* ========================================
+   FRIENDLY LINKS
+   ======================================== */
+.ycf-flinks {
+    padding: 12px;
+    background: var(--pnl);
+    border-radius: var(--rr);
+    border: 1px solid var(--bdr);
+    box-shadow: 0 1px 5px var(--shd);
+}
+
+.ycf-flinks dl { margin: 0; }
+
+.ycf-flinks dd {
+    display: inline-block;
+    margin: 3px;
+}
+
+.ycf-flinks a {
+    color: var(--tl);
+    text-decoration: none;
+    transition: var(--ani);
+    font-size: 13px;
+}
+
+.ycf-flinks a:hover { color: var(--og); }
+
+.pd5 { padding: 3px 6px; }
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.ycf-ft {
+    padding: 22px 0;
+    text-align: center;
+    border-top: 1px solid var(--bdr);
+    margin-top: 24px;
+    background: var(--pnl);
+}
+
+.ycf-ft p {
+    margin: 6px 0;
+    color: var(--tx3);
+    font-size: 12px;
+}
+
+.ycf-ft a {
+    color: var(--tx3);
+    text-decoration: none;
+    transition: var(--ani);
+}
+
+.ycf-ft a:hover { color: var(--og); }
+
+.ycf-cr { display: block; }
+
+/* ========================================
+   UTILITY
+   ======================================== */
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.hide_mobile { display: block; }
+.hide_pc     { display: block; }
+
+@media (max-width: 768px) {
+    .hide_mobile { display: none !important; }
+}
+@media (min-width: 769px) {
+    .hide_pc { display: none !important; }
+}
+
+img[data-original] { background: var(--bg2); }
+
+/* ========================================
+   RESPONSIVE — MOBILE <= 768px
+   ======================================== */
+@media (max-width: 768px) {
+
+    .ycf-wrap { padding: 0 8px; }
+
+    .ycf-hd { box-shadow: 0 1px 5px var(--shd); }
+    .ycf-hd-in { padding: 10px 0; }
+
+    .ycf-brand { gap: 10px; }
+
+    .ycf-sname {
+        font-size: 22px;
+        letter-spacing: 0.5px;
+    }
+
+    .ycf-sname::after {
+        width: 4px;
+        height: 4px;
+        margin-left: 5px;
+        top: -6px;
+    }
+
+    .ycf-latest {
+        padding: 4px 10px;
+        gap: 6px;
+    }
+
+    .ycf-latest-tag { font-size: 10px; }
+    .ycf-latest-url { font-size: 12px; }
+
+    .ycf-gap { padding: 8px 0; }
+
+    /* NAV MOBILE: compact label, wide links, 4 per row × 2 rows */
+    .ycf-nav-row {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .ycf-nav-tag {
+        width: auto;
+        min-width: 0;
+        white-space: nowrap;
+        font-size: 12px;
+        padding: 6px 5px;
+        flex-shrink: 0;
+    }
+
+    .ycf-nav-links {
+        flex: 1;
+        min-width: 0;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 6px 5px;
+        font-size: 14px;
+    }
+
+    .ycf-nav-links a {
+        font-size: 14px;
+        padding: 6px 2px;
+        width: calc((100% - 12px) / 4);
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    /* FILM GRID: 2 columns */
+    .ycf-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .ycf-grid li:hover { transform: none; }
+
+    .ycf-card-body { padding: 6px 7px 8px; }
+
+    .ycf-card-body h5 { font-size: 12px; }
+
+    .ycf-sec-ttl { font-size: 16px; }
+
+    .ycf-sec-ttl::before { height: 15px; }
+
+    .ycf-sec-hd {
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+
+    .ycf-sch { padding: 9px; }
+
+    .ycf-sch input[type="text"] {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .ycf-sch button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .ycf-keywords {
+        padding: 9px;
+        gap: 5px;
+    }
+
+    .ycf-kw {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+
+    .ycf-player {
+        height: 56.25vw;
+        max-height: 380px;
+        margin-bottom: 12px;
+    }
+
+    .ycf-actions {
+        padding: 10px 8px;
+        gap: 7px;
+    }
+
+    .ycf-btn {
+        padding: 9px 14px;
+        font-size: 13px;
+    }
+
+    .ycf-share {
+        padding: 10px;
+        gap: 7px;
+    }
+
+    .ycf-pages {
+        padding: 14px 0;
+        gap: 4px;
+    }
+
+    .a_page_info,
+    .page_info_focus {
+        padding: 6px 10px;
+        font-size: 12px;
+        min-width: 32px;
+    }
+
+    .ycf-ft {
+        padding: 18px 0;
+        margin-top: 16px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE — SMALL MOBILE <= 480px
+   ======================================== */
+@media (max-width: 480px) {
+
+    .ycf-sname { font-size: 19px; }
+
+    .ycf-sname::after {
+        width: 4px;
+        height: 4px;
+        top: -5px;
+    }
+
+    .ycf-nav-tag {
+        font-size: 11px;
+        padding: 5px 4px;
+    }
+
+    .ycf-nav-links {
+        gap: 3px;
+        padding: 5px 4px;
+        font-size: 13px;
+    }
+
+    .ycf-nav-links a {
+        font-size: 13px;
+        padding: 5px 1px;
+        width: calc((100% - 9px) / 4);
+    }
+
+    .ycf-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .ycf-card-body h5 { font-size: 11px; }
+
+    .ycf-sec-ttl { font-size: 14px; }
+
+    .ycf-player {
+        height: 56.25vw;
+        max-height: 280px;
+        margin-bottom: 10px;
+    }
+
+    .ycf-actions {
+        padding: 9px 4px;
+        gap: 5px;
+    }
+
+    .ycf-btn {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .ycf-share {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .ycf-url-area {
+        padding: 7px 8px;
+        gap: 5px;
+    }
+
+    .ycf-url-label { font-size: 10px; }
+    .ycf-url-val   { font-size: 10px; }
+
+    .ycf-copy-btn {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .ycf-ico { font-size: 13px; }
+}
